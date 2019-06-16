@@ -176,7 +176,7 @@ def convert_to_sc(obj):
     if isinstance(obj, str):
         if obj.startswith("sc3:"):  # preliminary, to mark obj as sc3-code
             return "{}".format(obj[4:])
-        else
+        else:
             return '"{0}"'.format(obj)
     # further type conversion can be added in the future
     return obj.__repr__()
