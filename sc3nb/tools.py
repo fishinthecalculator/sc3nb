@@ -174,7 +174,10 @@ def convert_to_sc(obj):
     if isinstance(obj, complex):
         return 'Complex({0}, {1})'.format(obj.real, obj.imag)
     if isinstance(obj, str):
-        return '"{0}"'.format(obj)
+        if obj.startswith("sc3:"):  # preliminary, to mark obj as sc3-code
+            return "{}".format(obj[4:])
+        else
+            return '"{0}"'.format(obj)
     # further type conversion can be added in the future
     return obj.__repr__()
 
